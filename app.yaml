@@ -1,0 +1,14 @@
+service: api-flask
+runtime: python37
+api_version: 1
+
+#[START env]
+env_variables:
+    CLOUD_STORAGE_BUCKET: bstdl-self-service-refresh-app
+#[END env]
+
+handlers:
+- url: /static
+  static_dir: static
+- url: /.*
+  script: auto
